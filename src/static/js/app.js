@@ -157,7 +157,10 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                         className="toggles"
                         size="sm"
                         variant="link"
-                        onClick={toggleCompletion}
+                        onClick={() => {
+                            toggleCompletion();
+                            onBoxTick();
+                        }}
                         aria-label={
                             item.completed
                                 ? 'Mark item as incomplete'
