@@ -38,6 +38,18 @@ function TodoListCard() {
         },
         [items],
     );
+    
+    const onBoxTick = React.useCallback(
+        item => {
+            const index = items.findIndex(i => i.id === item.id);
+            setItems([
+                ...items.slice(0, index),
+                item,
+                ...items.slice(index + 1),
+            ]);
+            alert("You have completed a task!");
+        }
+    );
 
     const onItemRemoval = React.useCallback(
         item => {
@@ -61,6 +73,7 @@ function TodoListCard() {
                     key={item.id}
                     onItemUpdate={onItemUpdate}
                     onItemRemoval={onItemRemoval}
+                    onBoxTick={onBoxTick}
                 />
             ))}
         </React.Fragment>
