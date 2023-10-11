@@ -194,7 +194,7 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                 </Col>
             </Row>
             <h1> How to Create a docker container on GCS</h1>
-            <YoutubeEmbed embedId="rokGy0huYEA" />
+            <YoutubeEmbed embedId="LxHiCZCKwa8" />
         </Container>
     );
 }
