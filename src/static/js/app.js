@@ -1,22 +1,35 @@
-import React from "react";
-import "./styles.css";
-import YoutubeEmbed from "./youtubeEmbed";
-
 
 function App() {
-    const { Container, Row, Col, YoutubeEmbed } = ReactBootstrap;
+    const { Container, Row, Col } = ReactBootstrap;
     return (
         <Container>
-            <Row>
-                <Col md={{ offset: 3, span: 6 }}>
-                    <TodoListCard />
-                </Col>
-            </Row>
-            <h1> How to Create a docker container on GCS</h1>
-            <YoutubeEmbed embedId="LxHiCZCKwa8" />
+            <Container>
+                <Row>
+                    <Col md={{ offset: 3, span: 6 }}>
+                        <TodoListCard />
+                    </Col>
+                </Row>
+            </Container>
+            <Container>
+                <YoutubeEmbed/>
+            </Container>
         </Container>
     );
 }
+
+const YoutubeEmbed = ({ embedId }) => (
+    <div className="video-responsive">
+      <iframe
+        width="853"
+        height="480"
+        src={`https://www.youtube.com/embed/LxHiCZCKwa8`}
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        title="Embedded youtube"
+      />
+    </div>
+  );
 
 function TodoListCard() {
     const [items, setItems] = React.useState(null);
@@ -45,7 +58,7 @@ function TodoListCard() {
         },
         [items],
     );
-    
+
     const onBoxTick = React.useCallback(
         item => {
             const index = items.findIndex(i => i.id === item.id);
@@ -175,9 +188,8 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                         }
                     >
                         <i
-                            className={`far ${
-                                item.completed ? 'fa-check-square' : 'fa-square'
-                            }`}
+                            className={`far ${item.completed ? 'fa-check-square' : 'fa-square'
+                                }`}
                         />
                     </Button>
                 </Col>
@@ -195,8 +207,6 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                     </Button>
                 </Col>
             </Row>
-            <h1> How to Create a docker container on GCS</h1>
-            <YoutubeEmbed embedId="LxHiCZCKwa8" />
         </Container>
     );
 }
