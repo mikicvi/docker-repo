@@ -1,3 +1,8 @@
+import React from "react";
+import "./styles.css";
+import YoutubeEmbed from "./youtubeEmbed";
+
+
 function App() {
     const { Container, Row, Col } = ReactBootstrap;
     return (
@@ -188,6 +193,8 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                     </Button>
                 </Col>
             </Row>
+            <h1> How to Create a docker container on GCS</h1>
+            <YoutubeEmbed embedId="rokGy0huYEA" />
         </Container>
     );
 }
