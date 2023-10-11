@@ -4,7 +4,7 @@ import YoutubeEmbed from "./youtubeEmbed";
 
 
 function App() {
-    const { Container, Row, Col } = ReactBootstrap;
+    const { Container, Row, Col, YoutubeEmbed } = ReactBootstrap;
     return (
         <Container>
             <Row>
