@@ -12,6 +12,8 @@ function App() {
                     <TodoListCard />
                 </Col>
             </Row>
+            <h1> How to Create a docker container on GCS</h1>
+            <YoutubeEmbed embedId="LxHiCZCKwa8" />
         </Container>
     );
 }
